@@ -61,18 +61,13 @@ private:
 };
 
 
-class Observer1 : public Observer
+class SubObserver : public Observer
 {
 public:
-    Observer1() {}
-    ~Observer1() {}
-    virtual void Update() { cout << "Current Observer is 1" << endl; }
-};
+    SubObserver(int value):m_value(value) {}
+    ~SubObserver() {}
+    virtual void Update() { cout << "Current Observer is " << m_value << endl; }
 
-class Observer2 : public Observer
-{
-public:
-    Observer2() {}
-    ~Observer2() {}
-    virtual void Update() { cout << "Current Observer is 2" << endl; }
+private:
+    int m_value;
 };
